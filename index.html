@@ -37,14 +37,67 @@
       text-decoration: underline;
     }
     .hero {
-      background: url('https://images.unsplash.com/photo-1600585154340-be6161c2d80e') center/cover no-repeat;
+      position: relative;
       height: 400px;
+      overflow: hidden;
+    }
+    .hero .slider {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      animation: slide 20s infinite;
+    }
+    .hero .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: fade 20s infinite;
+    }
+    .hero .slide:nth-child(1) {
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161c2d80e');
+      animation-delay: 0s;
+    }
+    .hero .slide:nth-child(2) {
+      background-image: url('https://images.unsplash.com/photo-1598300057921-08f13c0ac3e2');
+      animation-delay: 5s;
+    }
+    .hero .slide:nth-child(3) {
+      background-image: url('https://images.unsplash.com/photo-1582582429200-0b7be8e96ff5');
+      animation-delay: 10s;
+    }
+    .hero .slide:nth-child(4) {
+      background-image: url('https://images.unsplash.com/photo-1601112219262-b72cce22b8e7');
+      animation-delay: 15s;
+    }
+    @keyframes fade {
+      0% { opacity: 0; }
+      5% { opacity: 1; }
+      25% { opacity: 1; }
+      30% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    .hero .content {
+      position: absolute;
+      width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
       text-shadow: 2px 2px 6px #000;
       font-size: 2.5rem;
+      font-weight: bold;
+      z-index: 10;
+    }
+    .emi-banner {
+      background-color: #27ae60;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.2rem;
       font-weight: bold;
     }
     .section {
@@ -121,8 +174,18 @@
   </nav>
 
   <section class="hero" id="home">
-    Furnish Your Dreams With Elegance
+    <div class="slider">
+      <div class="slide"></div>
+      <div class="slide"></div>
+      <div class="slide"></div>
+      <div class="slide"></div>
+    </div>
+    <div class="content">Furnish Your Dreams With Elegance</div>
   </section>
+
+  <div class="emi-banner">
+    💳 BAJAJ Finance EMI Available – Shop Now, Pay Later!
+  </div>
 
   <section class="section" id="products">
     <h2>Our Featured Products</h2>
